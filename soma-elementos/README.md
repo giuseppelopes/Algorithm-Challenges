@@ -16,4 +16,4 @@ Faça um FORK do projeto, desenvolva sua solução e submeta para PULL REQUEST.
 
 ## Dúvidas
 
-mailto: giuseppel@dbserver.com.br
+mailto: giuseppe.lopes@gmail.com
