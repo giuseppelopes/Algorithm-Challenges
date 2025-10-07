@@ -23,6 +23,12 @@ Sua missão, caso decida aceitá-la, é encontrar uma combinação de números e
 ### :shopping_cart: Verificar Limite
 Vamos às compras! Neste desafio, você vai ajudar um usuário a não estourar o limite do cartão de crédito. Você receberá uma lista de compras e um limite, e sua tarefa é dizer se a conta fecha no final.
 
+### :construction: Super Mario - Pirâmide à Direita
+Neste desafio, inspirado no clássico Super Mario Bros., sua tarefa é construir uma pirâmide de blocos alinhada à direita, com altura definida pelo usuário. Use sua lógica para recriar essa icônica estrutura do jogo!
+
+### :construction: Super Mario - Pirâmides Adjacentes
+Hora de evoluir no desafio do Super Mario! Agora, você precisa construir duas pirâmides de blocos adjacentes, com um espaço entre elas, também com altura definida pelo usuário. Um passo a mais na complexidade para testar suas habilidades.
+
 ---
 
 ## Como Participar?
