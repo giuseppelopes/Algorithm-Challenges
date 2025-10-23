@@ -1,20 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MultiplyArray {
 
-    public Integer[] multiply(Integer[] integers) {
+    public List<Long> multiply(List<Integer> numbers) {
 
-        if(integers == null || integers.length == 0) throw new IllegalArgumentException("Array invalid");
+        if (numbers.isEmpty()) throw new IllegalArgumentException();
+        List<Long> result = new ArrayList<>();
 
-        Integer[] newArray = new Integer[integers.length];
-
-        for(int i = 0; i < integers.length; i++) {
-            Integer tempValue = 1;
-            for (int j = 0; j < integers.length; j++) {
-                if(i != j) {
-                    tempValue *= integers[j];
-                }
-            }
-            newArray[i] = tempValue;
+        Long prefix = 1L;
+        for (int i = 0; i < numbers.size(); i++) {
+            result.add(prefix);
+            prefix *= numbers.get(i);
         }
-        return newArray;
+
+        Long suffix = 1L;
+        for (int i = numbers.size() - 1; i >= 0; i--) {
+            result.set(i, result.get(i) * suffix);
+            suffix *= numbers.get(i);
+        }
+
+        return result;
     }
 }

@@ -1,7 +1,8 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,25 +17,40 @@ public class MultiplyArrayTest {
 
     @Test
     public void shouldReturnNewArrayOfMultiplyAllElementsInArray() {
-        Integer[] expectedArray = new Integer[]{120, 60, 40, 30, 24};
-        Integer[] requestArray = new Integer[]{1, 2, 3, 4, 5};
+        List<Long> expected = new ArrayList<>(List.of(120L, 60L, 40L, 30L, 24L));
+        List<Integer> request = new ArrayList<>(List.of(1, 2, 3, 4, 5));
 
-        Integer[] resultArray = multiplyArray.multiply(requestArray);
+        List<Long> result = multiplyArray.multiply(request);
 
-        assertNotNull(resultArray);
-        assertEquals(Arrays.toString(expectedArray), Arrays.toString(resultArray));
+        assertNotNull(result);
+        assertEquals(expected, result);
     }
 
     @Test
-    public void shouldReturnExceptionWhenArrayNull() {
-        Integer[] requestArray = null;
-
+    public void shouldReturnEmptyNewArrayWhenArrayEmpty() {
+        List<Integer> requestArray = new ArrayList<>();
         assertThrows(IllegalArgumentException.class, () -> multiplyArray.multiply(requestArray));
     }
 
     @Test
-    public void shouldReturnNewArrayEmptyWhenArrayEmpty() {
-        Integer[] requestArray = new Integer[]{};
-        assertThrows(IllegalArgumentException.class, () -> multiplyArray.multiply(requestArray));
+    public void shouldReturnNewArrayWhenContainOneZero() {
+        List<Long> expected = new ArrayList<>(List.of(0L, 8L, 0L));
+        List<Integer> request = new ArrayList<>(List.of(2, 0, 4));
+
+        List<Long> result = multiplyArray.multiply(request);
+
+        assertNotNull(result);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void shouldReturnAllZerosNewArrayWhenContainTwoOrMoreZero() {
+        List<Long> expected = new ArrayList<>(List.of(0L, 0L, 0L, 0L));
+        List<Integer> request = new ArrayList<>(List.of(2, 0, 4, 0));
+
+        List<Long> result = multiplyArray.multiply(request);
+
+        assertNotNull(result);
+        assertEquals(expected, result);
     }
 }
